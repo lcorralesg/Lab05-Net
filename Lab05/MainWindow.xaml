@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="250" Width="300">
     <Grid>
-        <!-- Menu grande con 2 botones que abre 1 ventana que permite ingresar un empleado y otro para mostrar la lista de empleados -->
         <StackPanel>
             <Label Content="Menu" FontSize="30" HorizontalAlignment="Center"/>
             <Button Content="Ingresar Empleado" Click="Button_Click_Insert" FontSize="15" HorizontalAlignment="Center" Margin="0,20,0,0"/>

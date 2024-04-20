@@ -5,11 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab05"
         mc:Ignorable="d"
-        Title="ListEmp" Height="350" Width="700">
+        Title="ListEmp" Height="520" Width="1040">
     <Grid>
-        <StackPanel>
-            <Label Content="Lista de Empleados" FontSize="20" HorizontalAlignment="Center"/>
-            <DataGrid x:Name="dgEmpleados" AutoGenerateColumns="True" CanUserAddRows="False" ColumnWidth="*" HorizontalAlignment="Center" VerticalAlignment="Center" Width="600"/>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <Label Content="Actualizar Empleado" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <Label Content="ID" Width="100"/>
+                        <TextBox x:Name="txtID" Width="200" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <Label Content="Apellidos" Width="100"/>
+                        <TextBox x:Name="txtApellidos" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <Label Content="Nombre" Width="100"/>
+                        <TextBox x:Name="txtNombre" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <Label Content="Cargo" Width="100"/>
+                        <TextBox x:Name="txtCargo" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <Label Content="Ciudad" Width="100"/>
+                        <TextBox x:Name="txtCiudad" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <Label Content="Region" Width="100"/>
+                        <TextBox x:Name="txtRegion" Width="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20">
+                        <Button x:Name="btnActualizar" Content="Actualizar" Click="btnActualizar_Click"></Button>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <Label Content="Lista de Empleados" FontSize="20" HorizontalAlignment="Center"/>
+                <DataGrid x:Name="dgEmpleados" AutoGenerateColumns="True" CanUserAddRows="False" ColumnWidth="*" HorizontalAlignment="Center" VerticalAlignment="Center" Width="600" SelectionChanged="dgEmpleados_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Eliminar">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Eliminar" Click="Button_Eliminar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>
